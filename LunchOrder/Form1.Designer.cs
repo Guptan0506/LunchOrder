@@ -264,7 +264,7 @@
             Margin = new Padding(2);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Lunch Order";
+            Text = "Navya Gupta's Lunch Order";
             gbxMainCourse.ResumeLayout(false);
             gbxMainCourse.PerformLayout();
             groupBox2.ResumeLayout(false);

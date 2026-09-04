@@ -13,6 +13,7 @@ namespace LunchOrder
             InitializeComponent();
         }
 
+        //Clears the totals
         private void ClearTotals()
         {
             txtSubtotal.Text = "";
@@ -20,6 +21,7 @@ namespace LunchOrder
             txtOrderTotal.Text = "";
         }
 
+        //Clears the add-ons
         private void ClearAddOns()
         {
             checkBox1.Checked = false;
@@ -27,6 +29,7 @@ namespace LunchOrder
             checkBox3.Checked = false;
         }
 
+        //If radioButton1 is checked - Hamburger
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButton1.Checked)
@@ -42,6 +45,7 @@ namespace LunchOrder
             }
         }
 
+        //If radioButton2 is checked - Pizza
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButton2.Checked)
@@ -57,7 +61,7 @@ namespace LunchOrder
             }
         }
 
-
+        //If radioButton3 is checked - Salad
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButton3.Checked)
@@ -73,7 +77,7 @@ namespace LunchOrder
             }
         }
 
-
+        //This is what happens when you click on Place Order
         private void btnPlaceOrder_Click_1(object sender, EventArgs e)
         {
             double subtotal = mainCoursePrice;
@@ -89,8 +93,6 @@ namespace LunchOrder
             txtSalesTax.Text = tax.ToString("C");
             txtOrderTotal.Text = total.ToString("C");
         }
-
-        // ---------- 4. Add-on checkboxes ----------
 
         private void btnExit_Click(object sender, EventArgs e)
         {
