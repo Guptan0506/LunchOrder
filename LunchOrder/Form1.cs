@@ -1,18 +1,16 @@
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+
 namespace LunchOrder
 {
     public partial class Form1 : Form
     {
 
         private double mainCoursePrice = 6.95;
-        private double addOnPrice = 0.75;
+        private double addOnPrice = 2;
+
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Close();
         }
 
         private void ClearTotals()
@@ -24,11 +22,12 @@ namespace LunchOrder
 
         private void ClearAddOns()
         {
-            radioButton1.Checked = false;
-            radioButton2.Checked = false;
-            radioButton3.Checked = false;
+            checkBox1.Checked = false;
+            checkBox2.Checked = false;
+            checkBox3.Checked = false;
         }
-        private void radHamburger_CheckedChanged(object sender, EventArgs e)
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButton1.Checked)
             {
@@ -43,7 +42,7 @@ namespace LunchOrder
             }
         }
 
-        private void radPizza_CheckedChanged(object sender, EventArgs e)
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButton2.Checked)
             {
@@ -58,12 +57,13 @@ namespace LunchOrder
             }
         }
 
-        private void radSalad_CheckedChanged(object sender, EventArgs e)
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButton3.Checked)
             {
                 mainCoursePrice = 4.95;
-                addOnPrice = 0.25;
+                addOnPrice = 2;
                 groupBox1.Text = "Add-on items ($2/each)";
                 checkBox1.Text = "Croutons";
                 checkBox2.Text = "Bacon bits";
@@ -72,7 +72,9 @@ namespace LunchOrder
                 ClearTotals();
             }
         }
-        private void btnPlaceOrder_Click(object sender, EventArgs e)
+
+
+        private void btnPlaceOrder_Click_1(object sender, EventArgs e)
         {
             double subtotal = mainCoursePrice;
 
@@ -89,10 +91,10 @@ namespace LunchOrder
         }
 
         // ---------- 4. Add-on checkboxes ----------
-        private void chkAddOn_CheckedChanged(object sender, EventArgs e)
-        {
-            ClearTotals();
-        }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
